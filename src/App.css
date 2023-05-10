@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+}
+
+.mainpage {
+  background-color: #d5d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 350px;
+  height: 550px;
+  border-radius: 30px;
+  background-color: #d5d4d4;
+  box-shadow: 8px 8px 12px #a6a5a5, -8px -8px 12px #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+.inputdiv {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.taskinput {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 200px;
+  padding: 10px;
+  font-size: large;
+}
+
+.submitbtn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 30px;
+  vertical-align: middle;
+  line-height: 40px;
+  transition: all linear 0.1s;
+}
+
+.submitbtn:hover {
+  background-color: black;
+  color: #d5d4d4;
+}
+
+.submitbtn:active {
+  transform: scale(0.9);
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin-top: 30px;
+  height: 330px;
+  overflow: scroll;
+}
+
+ol {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  justify-content: center;
+}
+
+li {
+  word-wrap: break-word;
+}
+
+.listitem {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 10px;
+}
+
+ion-icon {
+  color: white;
+  background: black;
+  border-radius: 50%;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+ion-icon:hover {
+  color: black;
+  background: white;
+}
