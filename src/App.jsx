@@ -29,19 +29,24 @@ const App = () => {
   const submitTask = () =>{
     if(input){
       const allInputData = { id: new Date().getTime().toString(), name:input}
-      setTask([...task,[allInputData.id,allInputData.name]])
+      setTask([...task,allInputData])
       setInput("");
     }
   }
 
   const editTask = (currentElem) =>{
     setEdit(true);
-    setInput(currentElem[1])
+    setInput(currentElem.name)
     setInfo(currentElem);
   }
 
   const newSubmitTask = () =>{
-    info[1]=input;
+    setTask(task.map((presentElem)=>{
+      if(presentElem.id===info.id){
+        return({...presentElem, name:input})
+      }
+      return presentElem
+    }))
     setEdit(false);
     setInput("");
   }
@@ -49,7 +54,7 @@ const App = () => {
   const deleteTask = (serialno) =>{
     setTask((prev)=>{
       return(prev.filter((elem) => {
-        return (elem[0]!==serialno)
+        return (elem.id!==serialno)
       }))
     })
   }
@@ -70,7 +75,7 @@ const App = () => {
           <div className='lists'>
             <ol>
             {task.map((val, index)=>{
-              return(<TaskList content={val[1]} key={index} editstatus={edit} onDelete={()=>{deleteTask(val[0])}} onEdit={()=>{editTask(val)}}/>)
+              return(<TaskList content={val.name} key={index} editstatus={edit} onDelete={()=>{deleteTask(val.id)}} onEdit={()=>{editTask(val)}}/>)
             })}
             </ol>
           </div>
